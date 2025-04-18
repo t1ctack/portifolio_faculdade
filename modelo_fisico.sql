@@ -9,3 +9,10 @@ create table tbl_aluno
     
 );
 
+create table tbl_curso 
+(
+	id_curso int not null primary key auto_increment,
+    nome varchar(70) not null,
+    duracao_meses char(60)
+);
+
