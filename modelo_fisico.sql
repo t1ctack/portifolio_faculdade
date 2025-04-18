@@ -16,3 +16,8 @@ create table tbl_curso
     duracao_meses char(60)
 );
 
+create table tbl_professor 
+(
+	id_professor int not null primary key auto_increment,
+    nome varchar(100) not null
+);
