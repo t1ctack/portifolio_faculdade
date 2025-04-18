@@ -21,3 +21,15 @@ create table tbl_professor
 	id_professor int not null primary key auto_increment,
     nome varchar(100) not null
 );
+
+create table tbl_email_aluno 
+(
+	id_email_aluno int not null primary key auto_increment,
+    id_aluno int not null,
+    email_aluno varchar(320),
+    
+    constraint fk_tbl_aluno_tbl_email_aluno
+    foreign key (id_aluno)
+    references tbl_aluno (id_aluno)
+    
+);
