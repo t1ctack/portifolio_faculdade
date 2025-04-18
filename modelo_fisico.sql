@@ -33,3 +33,14 @@ create table tbl_email_aluno
     references tbl_aluno (id_aluno)
     
 );
+
+create table tbl_numero_aluno 
+(
+	id_numero int primary key not null auto_increment,
+    id_aluno int not null,
+    numero char(11)not null,
+    
+    constraint fk_tbl_aluno_tbl_numero_aluno
+    foreign key (id_aluno)
+    references tbl_aluno (id_aluno)
+);
