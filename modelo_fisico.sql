@@ -44,3 +44,15 @@ create table tbl_numero_aluno
     foreign key (id_aluno)
     references tbl_aluno (id_aluno)
 );
+
+create table tbl_email_professor
+(
+	id_email_professor int not null primary key auto_increment,
+    id_professor int not null,
+    email_professor varchar(320),
+    
+    constraint fk_tbl_professor_tbl_email_professor
+    foreign key (id_professor)
+    references tbl_professor (id_professor)
+    
+);
