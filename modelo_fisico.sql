@@ -84,3 +84,16 @@ create table tbl_materias
     foreign key (id_professor)
     references tbl_professor (id_professor)
 );
+
+create table tbl_nota 
+(
+	id_nota int primary key not null auto_increment,
+    id_professor int not null,
+    nota1 float not null,
+    nota2 float not null,
+    media_final float not null,
+    
+    constraint fk_tbl_professor_tbl_nota
+    foreign key (id_professor)
+    references tbl_professor (id_professor)
+);
