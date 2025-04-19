@@ -67,3 +67,20 @@ create table tbl_formacao
     foreign key (id_professor)
     references tbl_professor (id_professor)
 );
+
+create table tbl_materias 
+(
+	id_materia int not null primary key auto_increment,
+    id_curso int not null,
+    id_professor int not null,
+    nome varchar(70) not null,
+    carga_horaria int not null,
+    
+    constraint fk_tbl_curso_tbl_materias
+    foreign key (id_curso)
+    references tbl_curso (id_curso),
+    
+    constraint fk_tbl_professor_tbl_materias
+    foreign key (id_professor)
+    references tbl_professor (id_professor)
+);
