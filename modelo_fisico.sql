@@ -97,3 +97,31 @@ create table tbl_nota
     foreign key (id_professor)
     references tbl_professor (id_professor)
 );
+
+create table tbl_turma
+(
+	id_turma int not null primary key auto_increment,
+    id_curso int not null,
+    semestre int not null,
+    nome varchar(70) not null,
+    
+    constraint fk_tbl_curso_tbl_turma
+    foreign key (id_curso)
+    references tbl_curso (id_curso)
+);
+
+create table tbl_matricula 
+(
+	id_matricula int not null primary key auto_increment,
+    id_aluno int not null,
+    id_turma int not null,
+    data_matricula date not null,
+    
+    constraint fk_tbl_aluno_tbl_matricula
+    foreign key (id_aluno)
+    references tbl_aluno (id_aluno),
+    
+    constraint fk_tbl_turma_tbl_matricula
+    foreign key (id_turma)
+    references tbl_turma (id_turma)
+);
