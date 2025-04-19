@@ -56,3 +56,14 @@ create table tbl_email_professor
     references tbl_professor (id_professor)
     
 );
+
+create table tbl_formacao
+(
+	id_formacao int not null primary key auto_increment,
+    id_professor int not null,
+    formacao varchar(100) not null,
+    
+    constraint fk_tbl_professor_tbl_formacao
+    foreign key (id_professor)
+    references tbl_professor (id_professor)
+);
